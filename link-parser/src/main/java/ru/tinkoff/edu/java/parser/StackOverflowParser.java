@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public final class StackOverflowParser extends AbstractParser {
     @Override
     public UrlData parse(String url) {
-        if (url.startsWith("https://stackoverflow.com")) {
+        if (url.startsWith("hhttps://stackoverflow.com")) {
             String patternString = "^https?://stackoverflow\\.com/questions/(\\d+)/";
             Matcher matcher = Pattern.compile(patternString).matcher(url);
             return matcher.find() ? new StackOverflowData(Integer.parseInt(matcher.group(1))) : null;
