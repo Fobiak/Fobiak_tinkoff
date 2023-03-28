@@ -1,14 +1,10 @@
-package ru.tinkoff.edu.java.bot.handler;
+package ru.tinkoff.edu.java.bot.controller;
 
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.ErrorResponseException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.tinkoff.edu.java.bot.controller.UpdateController;
 import ru.tinkoff.edu.java.bot.dto.ApiErrorResponse;
 
-import java.util.Arrays;
 
 @RestControllerAdvice(
         basePackageClasses = UpdateController.class,
