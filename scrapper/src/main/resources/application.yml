@@ -1,2 +1,6 @@
 scrapper:
   test: hi
+
+springdoc:
+  swagger-ui:
+    path: "/swagger-ui"

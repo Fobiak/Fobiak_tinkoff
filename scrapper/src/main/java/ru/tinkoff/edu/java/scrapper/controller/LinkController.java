@@ -1,5 +1,6 @@
 package ru.tinkoff.edu.java.scrapper.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,10 @@ import java.util.NoSuchElementException;
 
 @Validated
 @RestController
-@RequestMapping("/links")
+@RequestMapping(path = "/links",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE
+)
 public class LinkController {
     @GetMapping("/{id}")
     public ListLinksResponse getAll(@PathVariable long id) {
