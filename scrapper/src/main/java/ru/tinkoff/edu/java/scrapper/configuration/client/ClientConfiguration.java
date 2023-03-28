@@ -3,6 +3,7 @@ package ru.tinkoff.edu.java.scrapper.configuration.client;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import ru.tinkoff.edu.java.scrapper.configuration.ApplicationConfig;
 import ru.tinkoff.edu.java.scrapper.configuration.client.impl.GitHubClient;
 import ru.tinkoff.edu.java.scrapper.configuration.client.impl.GitHubClientImpl;
 import ru.tinkoff.edu.java.scrapper.configuration.client.impl.StackOverflowClient;
@@ -27,5 +28,10 @@ public class ClientConfiguration {
         @Bean
         public StackOverflowClient stackOverflowClient() {
                 return new StackOverflowClientImpl(stackOverflowBaseUrl);
+        }
+
+        @Bean
+        public long schedulerIntervalMs(ApplicationConfig config) {
+                return config.scheduler().interval().toMillis();
         }
 }
