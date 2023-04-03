@@ -22,7 +22,7 @@ public class ListCommand extends AbstractCommand {
         return new SendMessage(chatId.toString(),
                 response.size() == 0 ? NO_LINKS_MSG : THERE_ARE_LINKS_MSG + response.links().stream()
                         .map(link -> link.url() + "\n")
-                        .toString());
+                        .reduce("", String::concat));
     }
 
     @Autowired

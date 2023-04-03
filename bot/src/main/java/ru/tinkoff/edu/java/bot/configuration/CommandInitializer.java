@@ -2,7 +2,6 @@ package ru.tinkoff.edu.java.bot.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import ru.tinkoff.edu.java.bot.telegram.command.CommandList;
 import ru.tinkoff.edu.java.bot.telegram.command.HelpCommand;
 import ru.tinkoff.edu.java.bot.telegram.command.ListCommand;
 import ru.tinkoff.edu.java.bot.telegram.command.StartCommand;
