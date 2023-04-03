@@ -3,6 +3,7 @@ package ru.tinkoff.edu.java.bot.client.impl;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -11,6 +12,7 @@ import ru.tinkoff.edu.java.bot.client.dto.LinkResponse;
 import ru.tinkoff.edu.java.bot.client.dto.ListLinksResponse;
 import ru.tinkoff.edu.java.bot.client.dto.RemoveLinkRequest;
 
+@Component
 public class ScrapperClientImpl implements ScrapperClient {
     private static final String TG_URI = "/tg-chat/{id}";
     private static final String LINKS_URI = "/links/{id}";
