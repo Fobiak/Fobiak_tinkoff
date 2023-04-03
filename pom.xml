@@ -24,6 +24,7 @@
     <spring-cloud.version>2022.0.0</spring-cloud.version>
     <spring-boot.version>3.0.1</spring-boot.version>
     <springdoc.version>2.0.2</springdoc.version>
+    <telegrambots.version>6.5.0</telegrambots.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -49,6 +50,11 @@
         <version>${springdoc.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.telegram</groupId>
+        <artifactId>telegrambots</artifactId>
+        <version>${telegrambots.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

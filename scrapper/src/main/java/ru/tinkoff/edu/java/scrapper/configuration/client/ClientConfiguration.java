@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.tinkoff.edu.java.scrapper.configuration.ApplicationConfig;
-import ru.tinkoff.edu.java.scrapper.configuration.client.impl.GitHubClient;
-import ru.tinkoff.edu.java.scrapper.configuration.client.impl.GitHubClientImpl;
-import ru.tinkoff.edu.java.scrapper.configuration.client.impl.StackOverflowClient;
-import ru.tinkoff.edu.java.scrapper.configuration.client.impl.StackOverflowClientImpl;
+import ru.tinkoff.edu.java.scrapper.client.impl.GitHubClient;
+import ru.tinkoff.edu.java.scrapper.client.impl.GitHubClientImpl;
+import ru.tinkoff.edu.java.scrapper.client.impl.StackOverflowClient;
+import ru.tinkoff.edu.java.scrapper.client.impl.StackOverflowClientImpl;
 
 @Configuration
 public class ClientConfiguration {
