@@ -13,26 +13,26 @@ import ru.tinkoff.edu.java.bot.telegram.command.UntrackCommand;
 public record CommandInitializer() {
     @Bean
     public StartCommand startCommand() {
-        return new StartCommand(CommandList.START);
+        return new StartCommand();
     }
 
     @Bean
     public HelpCommand helpCommand() {
-        return new HelpCommand(CommandList.HELP);
+        return new HelpCommand();
     }
 
     @Bean
     public ListCommand listCommand() {
-        return new ListCommand(CommandList.LIST);
+        return new ListCommand();
     }
 
     @Bean
     public TrackCommand trackCommand() {
-        return new TrackCommand(CommandList.TRACK);
+        return new TrackCommand();
     }
 
     @Bean
     public UntrackCommand untrackCommand() {
-        return new UntrackCommand(CommandList.UNTRACK);
+        return new UntrackCommand();
     }
 }

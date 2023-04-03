@@ -11,8 +11,8 @@ public class ListCommand extends AbstractCommand {
     private static final String THERE_ARE_LINKS_MSG = "Список отслеживаемых ссылок:\n";
     private ScrapperClientImpl client;
 
-    public ListCommand(CommandList command) {
-        super(command);
+    public ListCommand() {
+        super(CommandList.LIST);
     }
 
     @Override

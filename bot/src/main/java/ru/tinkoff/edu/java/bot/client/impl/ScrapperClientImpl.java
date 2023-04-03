@@ -32,8 +32,8 @@ public class ScrapperClientImpl implements ScrapperClient {
         return webClient.get()
                 .uri(LINKS_URI, id)
                 .retrieve()
-                .bodyToFlux(ListLinksResponse.class)
-                .blockLast();
+                .bodyToMono(ListLinksResponse.class)
+                .block();
     }
 
     @Override

@@ -4,8 +4,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class HelpCommand extends AbstractCommand {
-    public HelpCommand(CommandList command) {
-        super(command);
+    public HelpCommand() {
+        super(CommandList.HELP);
     }
 
     @Override
