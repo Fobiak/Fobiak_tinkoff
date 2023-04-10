@@ -10,9 +10,9 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import ru.tinkoff.edu.java.bot.client.dto.LinkResponse;
-import ru.tinkoff.edu.java.bot.client.dto.ListLinksResponse;
-import ru.tinkoff.edu.java.bot.client.impl.ScrapperClientImpl;
+import ru.tinkoff.edu.java.bot.dto.client.LinkResponse;
+import ru.tinkoff.edu.java.bot.dto.client.ListLinksResponse;
+import ru.tinkoff.edu.java.bot.client.ScrapperClientImpl;
 import ru.tinkoff.edu.java.bot.telegram.command.ListCommand;
 
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.bot.client.impl;
+package ru.tinkoff.edu.java.bot.client;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import ru.tinkoff.edu.java.bot.client.dto.AddLinkRequest;
-import ru.tinkoff.edu.java.bot.client.dto.LinkResponse;
-import ru.tinkoff.edu.java.bot.client.dto.ListLinksResponse;
-import ru.tinkoff.edu.java.bot.client.dto.RemoveLinkRequest;
+import ru.tinkoff.edu.java.bot.dto.client.AddLinkRequest;
+import ru.tinkoff.edu.java.bot.dto.client.LinkResponse;
+import ru.tinkoff.edu.java.bot.dto.client.ListLinksResponse;
+import ru.tinkoff.edu.java.bot.dto.client.RemoveLinkRequest;
 
 @Component
 public class ScrapperClientImpl implements ScrapperClient {

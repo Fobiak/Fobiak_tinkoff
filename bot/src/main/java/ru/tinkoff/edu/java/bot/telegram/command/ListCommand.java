@@ -1,11 +1,16 @@
 package ru.tinkoff.edu.java.bot.telegram.command;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import ru.tinkoff.edu.java.bot.client.dto.ListLinksResponse;
-import ru.tinkoff.edu.java.bot.client.impl.ScrapperClientImpl;
+import ru.tinkoff.edu.java.bot.dto.client.ListLinksResponse;
+import ru.tinkoff.edu.java.bot.client.ScrapperClientImpl;
 
+
+@Component
+@Order(5)
 public class ListCommand extends AbstractCommand {
     private static final String NO_LINKS_MSG = "Нет отслеживаемых ссылок";
     private static final String THERE_ARE_LINKS_MSG = "Список отслеживаемых ссылок:\n";

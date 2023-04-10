@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.bot.client.dto;
+package ru.tinkoff.edu.java.bot.dto.client;
 
 import java.util.List;
 
