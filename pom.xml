@@ -27,6 +27,8 @@
     <telegrambots.version>6.5.0</telegrambots.version>
     <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
     <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+    <liquibase-core.version>4.20.0</liquibase-core.version>
+    <postgresql.version>42.6.0</postgresql.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -57,6 +59,19 @@
         <artifactId>telegrambots</artifactId>
         <version>${telegrambots.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-core</artifactId>
+        <version>${liquibase-core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
