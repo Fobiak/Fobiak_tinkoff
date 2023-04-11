@@ -1,0 +1,13 @@
+scrapper:
+  test: hi
+  scheduler:
+    interval: 5000
+
+springdoc:
+  swagger-ui:
+    path: "/swagger-ui"
+
+client:
+  base-url:
+    github: "https://api.github.com"
+    stackoverflow: "https://api.stackexchange.com/2.3"
