@@ -1,6 +1,6 @@
 --liquibase formatted sql
 --changeset Fobiak:create_chat-link_table
-CREATE TABLE chat_link
+CREATE TABLE if not exists chat_link
 (
     chat_id bigint,
     link_id bigint,
