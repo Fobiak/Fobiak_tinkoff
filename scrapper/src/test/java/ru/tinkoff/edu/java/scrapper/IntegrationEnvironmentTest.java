@@ -1,3 +1,5 @@
+package ru.tinkoff.edu.java.scrapper;
+
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +25,7 @@ public class IntegrationEnvironmentTest extends IntegrationEnvironment {
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(GET_ALL_TABLES_QUERY);
         Assertions.assertTrue(getTableNames(result)
-                .containsAll(List.of("link", "chat", "chat_link", "databasechangelog", "databasechangeloglock")));
+                .containsAll(List.of("link", "chat", "subscription", "databasechangelog", "databasechangeloglock")));
     }
 
     private List<String> getTableNames(ResultSet result) throws SQLException {
