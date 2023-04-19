@@ -10,7 +10,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import ru.tinkoff.edu.java.scrapper.IntegrationEnvironment;
 import ru.tinkoff.edu.java.scrapper.dto.entity.Chat;
+import ru.tinkoff.edu.java.scrapper.dto.entity.Link;
 
+import java.net.URI;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,6 +21,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class JdbcChatRepositoryTest extends IntegrationEnvironment {
+    private static final Link TEST_LINK = Link.builder()
+            .id(13L)
+            .url(URI.create("https://tcsbank.ru"))
+            .build();
     private static final Chat TEST_CHAT = new Chat(13L);
 
 
@@ -26,7 +32,7 @@ class JdbcChatRepositoryTest extends IntegrationEnvironment {
     private JdbcTemplate template;
 
     @Autowired
-    private JdbcChatRepository chatRepository;
+    private ChatRepository chatRepository;
 
     @Test
     @Transactional
@@ -44,6 +50,7 @@ class JdbcChatRepositoryTest extends IntegrationEnvironment {
     @Rollback
     void when_AddingDuplicateChat_Expect_Exception() {
         chatRepository.save(TEST_CHAT);
+        assertEquals(1, findAll().size());
         assertThrows(DataIntegrityViolationException.class, () -> chatRepository.save(TEST_CHAT));
     }
 
@@ -52,10 +59,9 @@ class JdbcChatRepositoryTest extends IntegrationEnvironment {
     @Rollback
     void when_RemoveExistingChat_Expect_Removed() {
         chatRepository.save(TEST_CHAT);
-        int beforeRemovingCount = findAll().size();
+        assertEquals(1, findAll().size());
         chatRepository.removeById(TEST_CHAT.getId());
-        int afterRemovingCount = findAll().size();
-        assertEquals(beforeRemovingCount, afterRemovingCount + 1);
+        assertEquals(0, findAll().size());
     }
 
     @Test
@@ -71,6 +77,13 @@ class JdbcChatRepositoryTest extends IntegrationEnvironment {
     void when_TableHasOneEntry_Expect_FindAllReturnsOne() {
         chatRepository.save(TEST_CHAT);
         assertEquals(1, chatRepository.findAll().size());
+    }
+
+    @Test
+    @Transactional
+    @Rollback
+    void when_ThereIsNoLinkInAnyChat_Expect_FindAllReturnsZero() {
+        assertEquals(0, chatRepository.findAllByLink(TEST_LINK.getId()).size());
     }
 
     private List<Chat> findAll() {

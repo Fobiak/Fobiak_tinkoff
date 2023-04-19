@@ -13,7 +13,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Link {
-    private long id;
+    private Long id;
     private URI url;
     private Instant updatedAt;
 }
