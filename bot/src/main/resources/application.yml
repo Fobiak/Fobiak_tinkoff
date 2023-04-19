@@ -1,0 +1,11 @@
+bot:
+  test: "Helloworld!!"
+  username: "Fobiak_bot"
+  token: ${TOKEN}
+
+springdoc:
+  swagger-ui:
+    path: "/swagger-ui"
+
+scrapper:
+  host: "localhost"
