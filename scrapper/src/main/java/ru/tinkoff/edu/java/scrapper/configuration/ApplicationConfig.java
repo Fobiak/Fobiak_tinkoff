@@ -14,7 +14,9 @@ import java.time.Duration;
 public record ApplicationConfig(
         @NotNull String test,
         @NotNull Scheduler scheduler,
-        @NotNull AccessType databaseAccessType) {
+        @NotNull AccessType databaseAccessType,
+        @NotNull String queue,
+        @NotNull String exchange) {
     public record Scheduler(Duration interval) {
     }
 }

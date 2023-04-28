@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.bot.configuration;
+package ru.tinkoff.edu.java.scrapper.configuration;
 
 
 import org.springframework.amqp.core.Binding;

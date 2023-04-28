@@ -10,7 +10,5 @@ import org.springframework.validation.annotation.Validated;
 public record ApplicationConfig(
         @NotNull String test,
         @NotNull String username,
-        @NotNull String token,
-        @NotNull String queue,
-        @NotNull String exchange) {
+        @NotNull String token) {
 }
