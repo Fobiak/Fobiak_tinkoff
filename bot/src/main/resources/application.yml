@@ -1,12 +1,6 @@
-bot:
+app:
   test: "Helloworld!!"
-  username: "Fobiak_bot"
-  token: ${TOKEN}
-
-
-springdoc:
-  swagger-ui:
-    path: "/swagger-ui"
-
-scrapper:
-  host: "localhost"
+  bottoken: ${TOKEN}
+  scrapper-queue-name: "updates.queue"
+  exchange: "updates"
+  queue: "updates.queue"

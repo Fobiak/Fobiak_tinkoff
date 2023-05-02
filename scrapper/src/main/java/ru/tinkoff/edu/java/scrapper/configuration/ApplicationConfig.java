@@ -2,21 +2,12 @@ package ru.tinkoff.edu.java.scrapper.configuration;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.validation.annotation.Validated;
 import ru.tinkoff.edu.java.scrapper.enums.AccessType;
-
-import java.time.Duration;
+import ru.tinkoff.edu.java.scrapper.web.sheduler.Scheduler;
 
 @Validated
-@EnableScheduling
-@ConfigurationProperties(prefix = "scrapper", ignoreUnknownFields = false)
-public record ApplicationConfig(
-        @NotNull String test,
-        @NotNull Scheduler scheduler,
-        @NotNull AccessType databaseAccessType,
-        @NotNull String queue,
-        @NotNull String exchange) {
-    public record Scheduler(Duration interval) {
-    }
+@ConfigurationProperties(prefix = "app", ignoreUnknownFields = false)
+public record ApplicationConfig(@NotNull String test, Scheduler scheduler, AccessType databaseAccessType,
+                                String queue, String exchange, boolean useQueue) {
 }
