@@ -1,0 +1,6 @@
+app:
+  test: "Helloworld!!"
+  bottoken: ${TOKEN}
+  scrapper-queue-name: "updates.queue"
+  exchange: "updates"
+  queue: "updates.queue"
