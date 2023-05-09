@@ -3,4 +3,4 @@ springdoc:
     path: /swagger-ui
 
 app:
-  test="Helloworld!!":
+  test = "Helloworld!!":
