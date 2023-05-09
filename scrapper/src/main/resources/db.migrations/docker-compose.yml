@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+  postgresql:
+    image: postgres:15
+    container_name: scrapper-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=scrapper
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    networks:
+      - backend
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  liquibase-migrations:
+    image: liquibase/liquibase:4.18
+    depends_on:
+      - postgresql
+    command:
+      - --hub-mode=off
+      - --changelog-file=master.xml
+      - --driver=org.postgresql.Driver
+      - --url=jdbc:postgresql://postgresql:5432/scrapper
+      - --username=postgres
+      - --password=password
+      - update
+    volumes:
+      - ./migrations:/liquibase/changelog\
+      - ./:/liquibase/changelog
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=quest
+      - RABBITMQ_DEFAULT_PASS=quest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq/
+      - rabbitmq_log:/var/log/rabbitmq
+
+networks:
+  backend:
+
+volumes:
+  db-data:
+  rabbitmq_log:
+  rabbitmq_data:

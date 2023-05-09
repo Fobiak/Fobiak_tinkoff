@@ -1,0 +1,32 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+app:
+  test: "Helloworld!!"
+  scheduler:
+    interval: 50000
+  database-access-type: jpa
+  exchange: "updates"
+  queue: "updates.queue"
+  useQueue: true
+
+server:
+  port: 8077
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: db/migrations/master.xml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scrapper
+    username: postgres
+    password: password
